@@ -1,0 +1,14 @@
+header{
+    display: flex;
+    background-color: lightcoral;
+   width: 1317px;
+    height: 56px;
+    margin: 0 auto;
+}
+.d-flex{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}

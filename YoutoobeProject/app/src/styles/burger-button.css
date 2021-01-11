@@ -1,0 +1,10 @@
+.main-box-burger-btn{
+    padding: 8px;
+    margin-right: 16px;
+}
+.burger-btn{
+    border: none;
+    background-color: transparent;
+outline: none;
+    cursor: pointer;
+}

@@ -1,0 +1,16 @@
+.main-list-box{
+
+}
+.main-list-item{
+    list-style: none;
+    padding-left: 15px;
+}
+.main-list-items-box{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 120px;
+}
+.list-img{
+    width: 24px;
+    height: 24px;
+}
