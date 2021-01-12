@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const a = [
+        {id:10,city:'lgw'},
+        {id:20,city:'lgw'},
+        {id:30,city:'lgw'}
+    ];
+
+    const b = a.reduce((accum,item)=> {
+        accum.push(item.id)
+        return accum;
+    },[])
+    console.log(b);
+</script>
+</body>
+</html>
