@@ -13,25 +13,29 @@ export default function TodoItem({item,flag,value,array}) {
     //         flag = true;
     //     }
     // }   //onClick={()=>changeStatus()} style={{textDecoration :flag ? 'none' : 'lineThrough'}}
+
     const [state,setState] = useState(false);
-    console.log(item,'todoItem');
+    const [field,setField] = useState('edit');
+
     const changeState = () =>{
        if(state){
-           setState(false)
+           setState(false);
+           setField('edit')
+
+
        }
        else{
-           setState(true)
+           setState(true);
+           setField('save')
        }
    }
-    const editItem = ()=>{
-
-    }
+    console.log(state,'state');
     return (
         <div className="list-box">
 
             <div className="item">
                  <p >{value}</p>
-                <button className='edit-btn' onClick={changeState}>edit</button>
+                <button className='edit-btn' onClick={changeState}>{field}</button>
                 { state && <EditField item={item}/>}
 
             </div>

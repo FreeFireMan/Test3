@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import '../styles.css'
 import TodoItem from "./TodoItem";
 import {Button} from "antd";
+import {Context} from "../context";
+
 
 export default function TodosCreateForm() {
 
@@ -24,12 +26,13 @@ export default function TodosCreateForm() {
         localStorage.setItem('todos', JSON.stringify(listItems));
     }, [listItems]);
 
-    // useEffect(()=>{
-    //     const setStorageData = localStorage.getItem('todos');
-    //             setListItems(JSON.parse(setStorageData))
-    // },[])
+    const updateItems = (updatedItems) => {
+        localStorage.setItem("items", JSON.stringify(updatedItems));
+        setListItems(updatedItems);
+    };
 
     return (
+        <Context.Provider value={{updateItems,listItems}}>
         <div>
 
             <input type="text" className='add-input' ref={myRef}/>
@@ -40,5 +43,6 @@ export default function TodosCreateForm() {
 
             {!!listItems && listItems.map((item, index,array) => <TodoItem key={index} item={item} value={item.value} flag={item.flag} listItems={array}/>)}
         </div>
+        </Context.Provider>
     );
 }

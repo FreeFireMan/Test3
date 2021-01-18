@@ -1,7 +1,9 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import {Context} from "../context";
+
 
 export default function EditField({item}) {
-    console.log(item, 'before');
+    let {listItems,updateItems} = useContext(Context);
 
     const changeValue = (event) => {
         event.preventDefault();
@@ -14,18 +16,18 @@ export default function EditField({item}) {
                 element.value = inputValue;
             }
         }
-        localStorage.setItem('todos',JSON.stringify(itemFromStorage))
+        updateItems(itemFromStorage)
+       // localStorage.setItem('todos',JSON.stringify(itemFromStorage))
 
     }
-    const storageHandler = ()=>{
-        console.log('222222')
-    }
-    window.addEventListener("storage", storageHandler);
+
+
     return (
+
         <div>
             <form action="" onSubmit={changeValue}>
                 <input type="text"/>
-                <button>save</button>
+                <button>change</button>
             </form>
 
         </div>
