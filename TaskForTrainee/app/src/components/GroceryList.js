@@ -39,17 +39,19 @@ export default function TodoItem({item,flag,value,array}) {
         updateItems(itemFromStorage)
     }
 
-    const deleteItem = (event) => {
-        event.preventDefault();
+    const deleteItem = () => {
+        // event.preventDefault(); навіщо це тут?
         const itemFromStorage = JSON.parse(localStorage.getItem('todos'));
-
-        for (let element of itemFromStorage) {
-            if(item.id === element.id){
-                itemFromStorage.splice(item.id,1)
-                console.log(itemFromStorage.splice(item.id))
-            }
-        }
-        updateItems(itemFromStorage)
+        //
+        // for (let element of itemFromStorage) {
+        //     if(item.id === element.id){
+        //         console.log(element);
+        //         itemFromStorage.splice(item.id,1)
+        //         console.log(itemFromStorage.splice(item.id))
+        //     }
+        // }
+        const newArray = itemFromStorage.filter(todo => todo.id !== item.id)
+        updateItems(newArray)
     }
 
     return (
