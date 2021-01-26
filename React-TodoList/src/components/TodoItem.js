@@ -14,29 +14,29 @@ export default function TodoItem({item,flag,value,array}) {
     //     }
     // }   //onClick={()=>changeStatus()} style={{textDecoration :flag ? 'none' : 'lineThrough'}}
 
-    const [state,setState] = useState(false);
+    const [state,setState] = useState(true);
     const [field,setField] = useState('edit');
 
     const changeState = () =>{
-       if(state){
-           setState(false);
-           setField('edit')
+        if(state){
+            setState(false);
+            setField('edit')
 
 
-       }
-       else{
-           setState(true);
-           setField('save')
-       }
-   }
+        }
+        else{
+            setState(true);
+            setField('save')
+        }
+    }
     console.log(state,'state');
     return (
         <div className="list-box">
 
             <div className="item">
-                 <p >{value}</p>
+                <p >{value}</p>
                 <button className='edit-btn' onClick={changeState}>{field}</button>
-                { state && <EditField item={item}/>}
+                {state && <EditField item={item}/>}
 
             </div>
         </div>

@@ -17,7 +17,7 @@ export default function EditField({item}) {
             }
         }
         updateItems(itemFromStorage)
-       // localStorage.setItem('todos',JSON.stringify(itemFromStorage))
+        // localStorage.setItem('todos',JSON.stringify(itemFromStorage))
 
     }
 

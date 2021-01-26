@@ -8,10 +8,10 @@ import {Context} from "../context";
 export default function TodosCreateForm() {
 
 
-     const [listItems, setListItems] = useState(JSON.parse(localStorage.getItem('todos')) || []);
+    const [listItems, setListItems] = useState(JSON.parse(localStorage.getItem('todos')) || []);
     const [count, setCount] = useState(0);
 
-    console.log(listItems);
+
 
     const myRef = React.createRef()
     const addItem = () => {
@@ -30,19 +30,19 @@ export default function TodosCreateForm() {
         localStorage.setItem("items", JSON.stringify(updatedItems));
         setListItems(updatedItems);
     };
-
+    console.log(listItems,'asdadada');
     return (
         <Context.Provider value={{updateItems,listItems}}>
-        <div>
+            <div>
 
-            <input type="text" className='add-input' ref={myRef}/>
+                <input type="text" className='add-input' ref={myRef}/>
 
-            <Button type="primary" onClick={() => addItem()}>
-                Add to list
-            </Button>
+                <Button type="primary" onClick={() => addItem()}>
+                    Add to list
+                </Button>
 
-            {!!listItems && listItems.map((item, index,array) => <TodoItem key={index} item={item} value={item.value} flag={item.flag} listItems={array}/>)}
-        </div>
+                {!!listItems && listItems.map((item, index,array) => <TodoItem key={index} item={item} value={item.value} flag={item.flag} listItems={array}/>)}
+            </div>
         </Context.Provider>
     );
 }

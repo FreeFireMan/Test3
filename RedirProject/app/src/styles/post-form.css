@@ -1,0 +1,19 @@
+.main-form-container{
+    display: flex;
+    text-align: center;
+}
+.inp-width{
+    display: flex;
+    justify-content:space-around;
+    height: 30px;
+
+}
+.post-form-main-box{
+    margin: 20px 10px;
+}
+p{
+    margin: auto 0;
+}
+.m-l10px{
+    margin-left: 10px;
+}

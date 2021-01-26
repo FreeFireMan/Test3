@@ -1,0 +1,10 @@
+.users-list-item{
+ border: 1px solid silver;
+ display: flex;
+ align-items: center;
+ background-color: lightgray;
+ border-radius: 10px;
+}
+.details-btn{
+ margin: 10px;
+}
